@@ -56,7 +56,6 @@ public class CustomWebhookRepository {
             listOfPredicate.add(dateRangePredicate);
         }
 
-
         Predicate[] predicateList = new Predicate[listOfPredicate.size()];
         cq.where(listOfPredicate.toArray(predicateList));
 
