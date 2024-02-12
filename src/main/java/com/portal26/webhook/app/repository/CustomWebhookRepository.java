@@ -49,7 +49,7 @@ public class CustomWebhookRepository {
             listOfPredicate.add(domainPredicate);
         }
 
-        if(frmDate != null && toDate!= null){
+        if(frmDate != null && toDate!= null && frmDate != 0 && toDate != 0 ){
             Predicate fromDatePredicate = cb.greaterThanOrEqualTo(webhookDetailsRoot.get("creationDate"),frmDate);
             Predicate toDatePredicate = cb.lessThanOrEqualTo(webhookDetailsRoot.get("creationDate"),toDate);
             Predicate dateRangePredicate = cb.and(fromDatePredicate,toDatePredicate);

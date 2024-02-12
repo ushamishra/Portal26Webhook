@@ -23,10 +23,14 @@ public class WebhookUtil {
     }
 
     public static long convertQueryStrTimeToEpoch(String time) throws ParseException {
-        SimpleDateFormat df = new SimpleDateFormat(WebhookContstants.PORTAL26_DATE_TIME_FORMAT);
-        Date date = df.parse(time);
-        long epoch = date.getTime();
-        return epoch;
+        if(time != null ) {
+            SimpleDateFormat df = new SimpleDateFormat(WebhookContstants.PORTAL26_DATE_TIME_FORMAT);
+            Date date = df.parse(time);
+            long epoch = date.getTime();
+            return epoch;
+        } else {
+            return 0;
+        }
     }
 
 }
